@@ -1,0 +1,248 @@
+@font-face {
+    font-family: 'Jost';
+    src: 
+    url('../fonts/Jost-Light.woff2') format('woff2'),
+    url('../fonts/Jost-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Jost';
+    src: 
+    url('../fonts/Jost-Regular.woff2') format('woff2'),
+    url('../fonts/Jost-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Jost';
+    src: 
+    url('../fonts/Jost-Medium.woff2') format('woff2'),
+    url('../fonts/Jost-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+    
+@font-face {
+    font-family: 'Jost';
+    src: 
+    url('../fonts/Jost-SemiBold.woff2') format('woff2'),
+    url('../fonts/Jost-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+}
+    
+@font-face {
+    font-family: 'Jost';
+    src: 
+    url('../fonts/Jost-Bold.woff2') format('woff2'),
+    url('../fonts/Jost-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal; 
+}
+
+@font-face {
+    font-family: 'Jost';
+    src: 
+    url('../fonts/Jost-Black.woff2') format('woff2'),
+    url('../fonts/Jost-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+}
+
+:root {
+    --white: #fff;
+    --text-color:#352B2B;
+    --border: #C8986C;
+    --footer: #585755;
+} 
+
+body {
+    font-family: 'Jost' , sans-serif;
+    box-sizing: border-box;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1720px;
+}
+
+/*header*/
+
+.header {
+    background-color: var(--white);
+}
+
+.header__container-top {
+    display: flex;
+}
+
+.header__logo {
+    margin-left: auto;
+    width: calc(1200/1720*100%);
+    text-align: center;
+}
+
+.header__container-bottom {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header__top {
+    padding: 50px 0;
+}
+
+.header__login {
+    margin-right: 50px;
+    font: 500 21px/30px 'Jost';
+    color: var(--text-color);
+}
+
+.header__register {
+    font: 700 21px/30px 'Jost';
+    color: var(--text-color);
+}
+
+.header__login:hover,
+.header__register:hover {
+    color: var(--border);
+    transition: color .3s linear;
+}
+
+.header__bottom {
+    padding-bottom: 50px;
+
+}
+
+.header__nav {
+    display: flex;
+    width: calc(550/1800 * 100%);
+}
+
+.header__list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.header__item {
+    margin-right: 60px;
+    font: 300 21px/30px 'Jost';
+    color: var(--text-color);
+    transition: color .3s linear;
+}
+
+.header__item-active {
+    font: 400 21px/30px 'Jost';
+}
+
+.header__item:hover {
+    color: var(--border);
+}
+
+.header__user {
+    font:300 21px/30px 'Jost';
+    color: var(--text-color);
+}
+
+/*hero*/
+
+.hero-about {
+    width: 100%;
+    min-height: 600px;
+    max-height: 600px;
+    background-image: url(../img/about-bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.hero__container {
+    padding: 193px 130px;
+    text-align: center;
+}
+
+.hero__title {
+    position: relative;
+    padding-bottom: 30px;
+    margin-bottom: 70px;
+    font: 900 45px/65px 'Jost';
+}
+
+.hero__title::before {
+    position: absolute;
+    content: '';
+    bottom: 0;
+    right: 0;
+    left: 46%;
+    border-bottom: 2px solid #c8986c;
+    width: 100px;
+}
+
+.hero__btn {
+    padding: 25px 39px;
+    font: 500 21px/30px 'Jost';
+    color: var(--white);
+    background-color: #585755;
+    transition: all .2s linear;
+}
+
+.hero__btn:hover {
+    background-color: #c8986c;
+}
+
+/*about*/
+
+.about {
+    padding-top: 100px;
+}
+
+.about__container {
+    text-align: center;
+}
+
+.about__title {
+    margin-bottom: 50px;
+    font: 700 34px/49px 'Jost';
+    text-align: center;
+    color: var(--text-color);
+}
+
+.descr {
+    font: 400 21px/30px 'Jost';
+    color: var(--text-color);
+}
+
+.about__descr {
+    margin-bottom: 100px;
+    text-align: center;
+}
+
+.items-wrap>div {
+    margin-bottom: 125px;
+    margin-right: 7px;
+    width: 850px;
+    display:inline-block;
+    vertical-align: middle;
+    text-align: left;
+    line-height: 40px;
+}
+
+
+/*footer*/
+
+.footer {
+    background-color: var(--footer);
+}
+
+.footer__container {
+    padding: 35px;
+}
+
+.footer__descr {
+    font: 300 21px/30px 'Jost';
+    text-align: center;
+    color: var(--white);
+}
+
+

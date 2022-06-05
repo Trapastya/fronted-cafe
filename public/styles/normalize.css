@@ -1,0 +1,83 @@
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  outline: none;
+  color: inherit;
+}
+
+a {
+  text-decoration: none;
+}
+
+img,svg {
+  max-width: 100%;
+  height: auto;
+}
+
+label,
+button,a {
+  cursor: pointer;
+}
+
+button, input, textarea , select {
+  font-family: inherit;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.horizontal-flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.vertical-flex {
+  display: flex;
+  flex-direction: column;
+}
+
+.display-none {
+  display: none;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0 0 0 0)
+}
+
+.visibility-hidden {
+  visibility: hidden;
+}
+
+@keyframes fade {
+  from {
+    visibility: hidden;
+    opacity: 0
+  }
+  to {
+    visibility: visible;
+    opacity: 1
+  }
+}
+
+.fadeout {
+  animation: fade .5s ease-out alternate;
+}

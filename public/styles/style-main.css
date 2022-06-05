@@ -1,0 +1,479 @@
+@font-face {
+    font-family: 'Jost';
+    src: 
+    url('../fonts/Jost-Light.woff2') format('woff2'),
+    url('../fonts/Jost-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Jost';
+    src: 
+    url('../fonts/Jost-Regular.woff2') format('woff2'),
+    url('../fonts/Jost-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Jost';
+    src: 
+    url('../fonts/Jost-Medium.woff2') format('woff2'),
+    url('../fonts/Jost-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+    
+@font-face {
+    font-family: 'Jost';
+    src: 
+    url('../fonts/Jost-SemiBold.woff2') format('woff2'),
+    url('../fonts/Jost-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+}
+    
+@font-face {
+    font-family: 'Jost';
+    src: 
+    url('../fonts/Jost-Bold.woff2') format('woff2'),
+    url('../fonts/Jost-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal; 
+}
+
+@font-face {
+    font-family: 'Jost';
+    src: 
+    url('../fonts/Jost-Black.woff2') format('woff2'),
+    url('../fonts/Jost-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+}
+
+:root {
+    --white: #fff;
+    --text-color:#352B2B;
+    --border: #C8986C;
+    --footer: #585755;
+} 
+
+body {
+    font-family: 'Jost' , sans-serif;
+    box-sizing: border-box;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1720px;
+}
+
+/*header*/
+
+.header {
+    background-color: var(--white);
+}
+
+.header__container-top {
+    display: flex;
+}
+
+.header__logo {
+    margin-left: auto;
+    width: calc(1200/1720*100%);
+    text-align: center;
+}
+
+.header__container-bottom {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header__top {
+    padding: 50px 0;
+}
+
+.header__login {
+    margin-right: 50px;
+    font: 500 21px/30px 'Jost';
+    color: var(--text-color);
+}
+
+.header__register {
+    font: 700 21px/30px 'Jost';
+    color: var(--text-color);
+}
+
+.header__login:hover,
+.header__register:hover {
+    color: var(--border);
+    transition: color .3s linear;
+}
+
+.header__bottom {
+    padding-bottom: 50px;
+
+}
+
+.header__nav {
+    display: flex;
+    width: calc(550/1800 * 100%);
+}
+
+.header__list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.header__item {
+    margin-right: 60px;
+    font: 300 21px/30px 'Jost';
+    color: var(--text-color);
+    transition: color .3s linear;
+}
+
+.header__item-active {
+    font: 400 21px/30px 'Jost';
+}
+
+.header__item:hover {
+    color: var(--border);
+}
+
+.header__user {
+    font:300 21px/30px 'Jost';
+    color: var(--text-color);
+}
+
+/*hero*/
+
+.hero-main {
+    width: 100%;
+    min-height: 600px;
+    max-height: 600px;
+    background-image: url(../img/main-bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.hero__container {
+    padding: 193px 177px;
+    text-align: center;
+}
+
+.hero__title {
+    position: relative;
+    padding-bottom: 30px;
+    margin-bottom: 70px;
+    font: 900 45px/65px 'Jost';
+}
+
+.hero__title::before {
+    position: absolute;
+    content: '';
+    bottom: 0;
+    right: 0;
+    left: 46%;
+    border-bottom: 2px solid #c8986c;
+    width: 100px;
+}
+
+.hero__btn {
+    padding: 25px 39px;
+    font: 500 21px/30px 'Jost';
+    color: var(--white);
+    background-color: #585755;
+    transition: all .2s linear;
+}
+
+.hero__btn:hover {
+    background-color: #c8986c;
+}
+
+/*news*/
+
+.news__container {
+    padding-top: 100px;
+}
+
+.news__list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.news__item {
+    padding: 100px 100px 70px 100px;
+    width: 100%;
+    max-width: 860px;
+    min-height: 350px;
+    display: flex;
+    flex-direction: column;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.news__item-bg-1 {
+    background-image: url(../img/news-1.jpg);
+}
+
+.news__item-bg-2 {
+    background-image: url(../img/news-2.jpg);
+}
+
+.news__title {
+    margin-bottom: 50px;
+    font: 700 34px/49px 'Jost';
+    text-align: center;
+    color: var(--text-color);
+}
+
+.news__descr {
+    margin-bottom: auto;
+    font: 500 30px/43px 'Jost';
+    color: var(--text-color);
+}
+
+.news__more {
+    font: 400 21px/30px 'Jost';
+    transition: all .3s linear;
+}
+
+.news__more:hover {
+    color: var(--border);
+}
+
+.news__more:hover path{
+    fill: var(--border);
+    transition: all .3s linear;
+    transform: rotateY(30deg);
+}
+
+.news__arrow {
+    vertical-align: middle;
+}
+
+/*products*/
+
+
+.products {
+    padding-top: 100px;
+}
+
+.products__title {
+    margin-bottom: 50px;
+    font: 700 34px/49px 'Jost';
+    text-align: center;
+    color: var(--text-color);
+}
+
+.products__list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.products__item:not(:nth-child(4n)) {
+    margin-right: 100px;
+}
+
+.products__name {
+    margin-bottom: 15px;
+    font: 400 21px/30px 'Jost';
+}
+
+.products__descr {
+    font: 300 21px/30px 'Jost';
+}
+
+.products__card {
+    margin-bottom: 50px;
+    padding: 400px 15px 15px 15px;
+    position: relative;
+    text-align: center;
+    min-height: 445px;
+}
+
+.products__card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 350px;
+    height: 350px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.americano::before {
+    background-image: url(../img/americano.jpg);
+}
+
+.latte::before {
+    background-image: url(../img/latte.jpg);
+}
+
+.affogato::before {
+    background-image: url(../img/affogato.jpg);
+}
+
+.moccachino::before {
+    background-image: url(../img/moccachino.jpg);
+}
+
+.macchiato::before {
+    background-image: url(../img/macchiato.jpg);
+}
+
+.vinnese::before {
+    background-image: url(../img/vinnese.jpg);
+}
+
+.espresso::before {
+    background-image: url(../img/espresso.jpg);
+}
+
+.cappuccino::before {
+    background-image: url(../img/cappuccino.jpg);
+}
+
+/*contacts*/
+
+.contacts {
+    padding-top: 50px;
+    padding-bottom: 100px;
+}
+
+.contacts__title {
+    margin-bottom: 50px;
+    font: 700 34px/49px 'Jost';
+    text-align: center;
+    color: var(--text-color);
+}
+
+.contacts__info-top {
+    display: flex;
+    border: 2px solid var(--text-color);
+}
+
+.contacts__info-left,
+.contacts__info-center,
+.contacts__info-right {
+    padding: 100px 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.contacts__info-left,
+.contacts__info-center {
+   border-right: 2px solid #352B2B;
+}
+
+.contacts__info-title {
+    margin-bottom: 15px;
+    font: 600 21px/30px 'Jost';
+    color: var(--text-color);
+}
+
+.contacts__item-time {
+    display: flex;
+    justify-content: space-between;
+}
+
+.contacts__item-day {
+    margin-right: 50px;
+    margin-bottom: 10px;
+    font: 300 21px/30px 'Jost';
+    color: var(--text-color);
+}
+
+.contacts__item-descr {
+    margin-bottom: 10px;
+    font: 400 21px/30px 'Jost';
+    color: var(--text-color);
+}
+
+.contacts__info-address {
+    font: 300 21px/30px 'Jost';
+    color: var(--text-color);
+}
+
+.contacts__info-phone {
+    margin-bottom: 10px;
+    font: 300 21px/30px 'Jost';
+    color:var(--text-color);
+}
+
+.contacts__info-mail {
+    margin-bottom: 10px;
+    font: 400 21px/30px 'Jost';
+    color:var(--text-color);
+}
+
+.contacts__info-phone:hover,
+.contacts__info-mail:hover {
+    color: var(--border);
+    transition: color .3s linear;
+}
+
+
+.contacts__info-bottom {
+    position: relative;
+    display: flex;
+    border: 2px solid var(--text-color);
+    border-top: none;
+}
+
+.contacts__info-left-bottom {
+    padding: 35px 30.1px;
+    border-right: 2px solid var(--text-color);
+}
+
+.contacts__info-register {
+    font: 600 21px/30px 'Jost';
+    color: var(--text-color);
+}
+
+.contacts__info-right-bottom {
+    display: flex;
+    padding: 35px 100px;
+}
+
+.contacts__input {
+    width: 388px;
+    font: 300 21px/30px 'Jost';
+    color: var(--text-color);
+}
+
+.contacts__btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    padding: 34px 30px;
+    color: var(--white);
+    background-color: var(--footer);
+}
+
+.contacts__btn:hover {
+    background-color: var(--border);
+}
+
+
+/*footer*/
+
+.footer {
+    background-color: var(--footer);
+}
+
+.footer__container {
+    padding: 35px;
+}
+
+.footer__descr {
+    font: 300 21px/30px 'Jost';
+    text-align: center;
+    color: var(--white);
+}
