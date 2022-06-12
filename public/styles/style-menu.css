@@ -221,11 +221,15 @@ body {
 
 .menu__card {
     margin-bottom: 50px;
-    padding: 400px 15px 15px 15px;
+    /* padding: 400px 15px 15px 15px; */
     position: relative;
     text-align: center;
     width: 350px;
-    min-height: 445px;
+    /* min-height: 445px; */
+}
+
+.image {
+    margin-bottom: 10px;
 }
 
 .menu__card::before {
@@ -235,78 +239,14 @@ body {
     right: 0;
     bottom: 0;
     left: 0;
-    width: 350px;
-    height: 350px;
+    /* width: 350px;
+    height: 350px; */
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 .menu__item:not(:nth-child(4n)) {
     margin-right: 10px;
-}
-
-.eclair::before {
-    background-image: url(../img/eclair.jpg);
-}
-
-.cheesecake::before {
-    background-image: url(../img/cheesecake.jpg);
-}
-
-.cake::before {
-    background-image: url(../img/cake.jpg);
-}
-
-.donuts::before {
-    background-image: url(../img/donuts.jpg);
-}
-
-.milkshake::before {
-    background-image: url(../img/milkshake.jpg);
-}
-
-.lemonade::before {
-    background-image: url(../img/lemonade.jpg);
-}
-
-.tea::before {
-    background-image: url(../img/tea.jpg);
-}
-
-.morse::before {
-    background-image: url(../img/morse.jpg);
-}
-
-.americano::before {
-    background-image: url(../img/americano.jpg);
-}
-
-.latte::before {
-    background-image: url(../img/latte.jpg);
-}
-
-.affogato::before {
-    background-image: url(../img/affogato.jpg);
-}
-
-.moccachino::before {
-    background-image: url(../img/moccachino.jpg);
-}
-
-.meat-pie::before {
-    background-image: url(../img/meat-pie.jpg);
-}
-
-.sweet-pie::before {
-    background-image: url(../img/sweet-pie.jpg);
-}
-
-.croissant::before {
-    background-image: url(../img/croissant.jpg);
-}
-
-.sweet-cakes::before {
-    background-image: url(../img/sweet-cakes.jpg);
 }
 
 /*footer*/

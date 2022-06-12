@@ -4,6 +4,7 @@ import Main from "./../views/Main.vue";
 import Login from "./../views/Login.vue";
 import Regist from "./../views/Regist.vue";
 import Basket from "./../views/Basket.vue";
+import NotFound from "./../views/NotFound.vue";
 
 Vue.use(VueRouter);
 
@@ -16,6 +17,15 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/About.vue"),
+  },
+  { 
+    path: '/404', 
+    name: '404', 
+    component: NotFound, 
+  }, 
+  { 
+    path: '*',
+    redirect: '/menu' 
   },
   {
     path: "/menu",

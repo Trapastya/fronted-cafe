@@ -19,31 +19,13 @@
                 <ul class="news__list">
                     <li class="news__item news__item-bg-1">
                         <p class="news__descr">
-                            В эту пятницу скидка 25%
+                            Каждую пятницу скидка 10%
                         </p>
-                        <a class="news__more">
-                            Подробнее
-                            <svg class="news__arrow" width="52" height="16" viewbox="0 0 52 16" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M1 7C0.447715 7 0 7.44772 0 8C0 8.55228 0.447715 9 1 9V7ZM51.7071 8.70711C52.0976 8.31658 52.0976 7.68342 51.7071 7.29289L45.3431 0.928932C44.9526 0.538408 44.3195 0.538408 43.9289 0.928932C43.5384 1.31946 43.5384 1.95262 43.9289 2.34315L49.5858 8L43.9289 13.6569C43.5384 14.0474 43.5384 14.6805 43.9289 15.0711C44.3195 15.4616 44.9526 15.4616 45.3431 15.0711L51.7071 8.70711ZM1 9H51V7H1V9Z"
-                                    fill="#352B2B" />
-                            </svg>
-                        </a>
                     </li>
                     <li class="news__item news__item-bg-2">
                         <p class="news__descr">
-                            Новые ароматы кофе
+                            Неповторимые ароматы кофе
                         </p>
-                        <a class="news__more">
-                            Подробнее
-                            <svg class="news__arrow" width="52" height="16" viewbox="0 0 52 16" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M1 7C0.447715 7 0 7.44772 0 8C0 8.55228 0.447715 9 1 9V7ZM51.7071 8.70711C52.0976 8.31658 52.0976 7.68342 51.7071 7.29289L45.3431 0.928932C44.9526 0.538408 44.3195 0.538408 43.9289 0.928932C43.5384 1.31946 43.5384 1.95262 43.9289 2.34315L49.5858 8L43.9289 13.6569C43.5384 14.0474 43.5384 14.6805 43.9289 15.0711C44.3195 15.4616 44.9526 15.4616 45.3431 15.0711L51.7071 8.70711ZM1 9H51V7H1V9Z"
-                                    fill="#352B2B" />
-                            </svg>
-                        </a>
                     </li>
                 </ul>
             </div>
@@ -54,84 +36,14 @@
                     Наши лучшие товары
                 </h3>
                 <ul class="products__list">
-                    <li class="products__item">
-                        <article class="products__card americano">
+                    <li class="products__item" v-for="item in this.favorite_products" :key="item.id">
+                        <img :src="'./img/'+item.filename" class="image" />
+                        <article class="products__card">
                             <p class="products__name">
-                                Американо, 110 рублей
+                                {{item.name}} {{item.cost}} рублей
                             </p>
                             <p class="products__descr">
-                                100% натуральная арабика, 30&nbsp;мл
-                            </p>
-                        </article>
-                    </li>
-                    <li class="products__item">
-                        <article class="products__card latte">
-                            <p class="products__name">
-                                Латте, 115 рублей
-                            </p>
-                            <p class="products__descr">
-                                100% натуральная арабика, 30&nbsp;мл
-                            </p>
-                        </article>
-                    </li>
-                    <li class="products__item">
-                        <article class="products__card affogato">
-                            <p class="products__name">
-                                Аффогато, 130 рублей
-                            </p>
-                            <p class="products__descr">
-                                100% натуральная арабика, 30&nbsp;мл
-                            </p>
-                        </article>
-                    </li>
-                    <li class="products__item">
-                        <article class="products__card moccachino">
-                            <p class="products__name">
-                                Моккачино, 95 рублей
-                            </p>
-                            <p class="products__descr">
-                                100% натуральная арабика, 30&nbsp;мл
-                            </p>
-                        </article>
-                       
-                    </li>
-                    <li class="products__item">
-                        <article class="products__card macchiato">
-                            <p class="products__name">
-                                Макиато, 112 рублей
-                            </p>
-                            <p class="products__descr">
-                                100% натуральная арабика, 30&nbsp;мл
-                            </p>
-                        </article>
-                    </li>
-                    <li class="products__item">
-                        <article class="products__card vinnese">
-                            <p class="products__name">
-                                Венский, 120 рублей
-                            </p>
-                            <p class="products__descr">
-                                100% натуральная арабика, 30&nbsp;мл
-                            </p>
-                        </article>
-                    </li>
-                    <li class="products__item">
-                        <article class="products__card espresso">
-                            <p class="products__name">
-                                Экспрессо, 80 рублей
-                            </p>
-                            <p class="products__descr">
-                                100% натуральная арабика, 30&nbsp;мл
-                            </p>
-                        </article>
-                    </li>
-                    <li class="products__item">
-                        <article class="products__card cappuccino">
-                            <p class="products__name">
-                                Капучино, 115 рублей
-                            </p>
-                            <p class="products__descr">
-                                100% натуральная арабика, 30&nbsp;мл
+                                {{item.description}}
                             </p>
                         </article>
                     </li>
@@ -211,6 +123,29 @@
     </main>
     </div>
 </template>
+
+<script>
+import axios from "axios";
+import CONSTANTS from "./../CONSTANTS";
+export default {
+    data() {
+        return {
+            favorite_products: []
+        }
+    },
+    async mounted() {
+        const result = await axios.post(CONSTANTS.VUE_APP_API_URL + '/products/getWithFilters', {
+        filters: [
+        {
+            name: "favorite",
+            value: true
+        }
+        ]
+        });
+        this.favorite_products = result.data.products.rows;
+    }
+}
+</script>
 
 <style lang="css" scoped>
 @import url("./../../public/styles/style-main.css");

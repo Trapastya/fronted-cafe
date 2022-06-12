@@ -269,7 +269,7 @@ body {
 
 .products__list {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
 }
 
@@ -288,10 +288,10 @@ body {
 
 .products__card {
     margin-bottom: 50px;
-    padding: 400px 15px 15px 15px;
+    /* padding: 400px 15px 15px 15px; */
     position: relative;
     text-align: center;
-    min-height: 445px;
+    /* min-height: 445px; */
 }
 
 .products__card::before {
@@ -305,38 +305,6 @@ body {
     height: 350px;
     background-repeat: no-repeat;
     background-size: cover;
-}
-
-.americano::before {
-    background-image: url(../img/americano.jpg);
-}
-
-.latte::before {
-    background-image: url(../img/latte.jpg);
-}
-
-.affogato::before {
-    background-image: url(../img/affogato.jpg);
-}
-
-.moccachino::before {
-    background-image: url(../img/moccachino.jpg);
-}
-
-.macchiato::before {
-    background-image: url(../img/macchiato.jpg);
-}
-
-.vinnese::before {
-    background-image: url(../img/vinnese.jpg);
-}
-
-.espresso::before {
-    background-image: url(../img/espresso.jpg);
-}
-
-.cappuccino::before {
-    background-image: url(../img/cappuccino.jpg);
 }
 
 /*contacts*/
