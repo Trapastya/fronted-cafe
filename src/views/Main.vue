@@ -41,6 +41,9 @@
                         <article class="products__card">
                             <p class="products__name">
                                 {{item.name}} {{item.cost}} рублей
+                                <img src="../../public/img/plus-flat.png"  style="width: 30px; height: 30px; align: center; top: 7px; right: 1px; position: relative;"
+                                @click.prevent="addItemToCart(item)"
+                                />
                             </p>
                             <p class="products__descr">
                                 {{item.description}}
@@ -143,6 +146,12 @@ export default {
         ]
         });
         this.favorite_products = result.data.products.rows;
+    },
+    methods:{
+        async addItemToCart(item){
+            const result = await axios.patch(CONSTANTS.VUE_APP_API_URL + '/cart/update', item);
+            console.log(result);
+        }
     }
 }
 </script>

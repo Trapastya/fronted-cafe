@@ -78,11 +78,12 @@ body {
 
 .header__container-top {
     display: flex;
+    justify-self: end;
 }
 
 .header__logo {
     margin-left: auto;
-    width: calc(1460/1720*100%);
+    width: calc(920/1720*100%);
     text-align: center;
 }
 

@@ -6,15 +6,16 @@
                 <img class="header__logo-img" src="img/ProCoffee.svg" aria-label="Логотип ProCoffee">
             </a>
             <div class="header__account">
-                <a class="header__login"><router-link to="/login">Войти</router-link></a>
-                <a class="header__register"><router-link to="/registr">Зарегистрироваться</router-link></a>
+                <a class="header__login" :style="token_is_exist ? 'opacity: 0' : '' "><router-link to="/login">Войти</router-link></a>
+                <a class="header__register" :style="token_is_exist ? 'opacity: 0' : '' "><router-link to="/registr">Зарегистрироваться</router-link></a>
+                <a class="header__register" @click.prevent="this.logout()" :style="token_is_exist ? '' : 'opacity: 0' ">Выйти</a>
             </div>
         </div>
     </header>
     <header class="header header__bottom">
         <div class="container header__container-bottom">
             <p class="header__user">
-                Здравствуйте, Антон Пушкин
+                Здравствуйте, {{this.user && this.user.name ? this.user.name : 'уважаемый гость!'}}
             </p>
             <nav class="header__nav">
                 <ul class="header__list">
@@ -52,7 +53,46 @@
     </div>
 </template>
 
+<script>
+import axios from 'axios';
+import CONSTANTS from "./../CONSTANTS";
+import { mapState } from 'vuex'
+export default {
+
+    computed: mapState({
+        user: state => state.user,
+    }),
+
+
+    data() {
+        return {
+            token_is_exist: null,
+            privet: "PRIVET"
+        }
+    },
+
+    async mounted() { 
+        this.token_is_exist = localStorage.getItem('auth_token');
+
+        if (this.token_is_exist) {
+            const result = await axios.post(CONSTANTS.VUE_APP_API_URL + '/users/userData', {
+                auth_token: this.token_is_exist 
+            });
+            console.log(result);
+            this.user.name = result.data.user.name;
+        }
+    },
+
+    methods: {
+        async logout() {
+            localStorage.removeItem('auth_token');
+            this.$router.push({ name: 'Login' });
+        }
+    }
+}
+</script>
+
 <style>
 @import url("./../../public/styles/normalize.css");
-@import url("./../../public/styles/normalize.css");
+@import url("./../../public/styles/style-registr.css");
 </style>

@@ -10,16 +10,16 @@
                         <label class="registr__label">
                             Электронная почта
                         </label>
-                        <input class="registr__mail" type="email">
+                        <input class="registr__mail" type="email" v-model="email">
                         <label class="registr__label">
                             Имя и фамилия
                         </label>
-                        <input class="registr__name" type="text">
+                        <input class="registr__name" type="text" v-model="name">
                         <label class="registr__label">
                             Пароль
                         </label>
-                        <input class="registr__password" type="password">
-                        <button class="register__btn" type="submit">
+                        <input class="registr__password" type="password" v-model="password">
+                        <button class="register__btn" @click.prevent="signup()">
                             СОЗДАТЬ
                         </button>
                     </form>
@@ -28,6 +28,35 @@
         </main>
     </div>
 </template>
+
+<script>
+import axios from 'axios';
+import CONSTANTS from "./../CONSTANTS";
+export default {
+    data() {
+        return {
+            email: "",
+            name: "",
+            password: ""
+        }
+    },
+    
+    methods: {
+        async signup() {
+            let result = await axios.post(CONSTANTS.VUE_APP_API_URL + '/users/registation', {
+                email: this.email, password: this.password, name: this.name
+            });
+
+            if (result.data.success) {
+                localStorage.setItem("auth_token", result.data.token)
+                this.$router.push({ name: 'Menu' });
+            } else {
+                this.$root.showNotification({text: result.data.message});
+            }
+        }
+    }
+}
+</script>
 
 <style lang="css">
 @import url("./../../public/styles/style-registr.css");

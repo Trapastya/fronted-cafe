@@ -22,6 +22,9 @@
                         <article class="menu__card">
                             <p class="menu__name">
                                 {{item.name}}, {{item.cost}} рублей
+                                <img src="../../public/img/plus-flat.png"  style="width: 30px; height: 30px; align: center; top: 7px; right: 1px; position: relative;"
+                                @click.prevent="addItemToCart(item)"
+                                />
                             </p>
                             <p class="menu__descr">
                                 {{item.description}}
@@ -42,6 +45,9 @@
                         <article class="menu__card">
                             <p class="menu__name">
                                 {{item.name}}, {{item.cost}} рублей
+                                <img src="../../public/img/plus-flat.png"  style="width: 30px; height: 30px; align: center; top: 7px; right: 1px; position: relative;"
+                                @click.prevent="addItemToCart(item)"
+                                />
                             </p>
                             <p class="menu__descr">
                                 {{item.description}}
@@ -62,6 +68,9 @@
                         <article class="menu__card">
                             <p class="menu__name">
                                 {{item.name}}, {{item.cost}} рублей
+                                <img src="../../public/img/plus-flat.png"  style="width: 30px; height: 30px; align: center; top: 7px; right: 1px; position: relative;"
+                                @click.prevent="addItemToCart(item)"
+                                />
                             </p>
                             <p class="menu__descr">
                                 {{item.description}}
@@ -82,6 +91,9 @@
                         <article class="menu__card">
                             <p class="menu__name">
                                 {{item.name}}, {{item.cost}} рублей
+                                <img src="../../public/img/plus-flat.png"  style="width: 30px; height: 30px; align: center; top: 7px; right: 1px; position: relative;"
+                                @click.prevent="addItemToCart(item)"
+                                />
                             </p>
                             <p class="menu__descr">
                                 {{item.description}}
