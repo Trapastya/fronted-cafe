@@ -32,7 +32,11 @@
 <script>
 import axios from 'axios';
 import CONSTANTS from "./../CONSTANTS";
+import { mapState } from 'vuex'
 export default {
+    computed: mapState({
+        user: state => state.user,
+    }),
     data() {
         return {
             email: "",
@@ -49,6 +53,8 @@ export default {
 
             if (result.data.success) {
                 localStorage.setItem("auth_token", result.data.token)
+                localStorage.setItem("username", result.data.username);
+                this.user.name = result.data.username;
                 this.$router.push({ name: 'Menu' });
             } else {
                 this.$root.showNotification({text: result.data.message});

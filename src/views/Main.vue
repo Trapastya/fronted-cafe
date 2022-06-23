@@ -5,7 +5,7 @@
             <h2 class="hero__title">
                 Все началось со&nbsp;скромной концепции: создать удивительный кофе
             </h2>
-            <button class="hero__btn">
+            <button class="hero__btn" @click.prevent="$router.push({name: 'Basket'})">
                 СДЕЛАТЬ ЗАКАЗ
             </button>
         </div>
@@ -40,7 +40,7 @@
                         <img :src="'./img/'+item.filename" class="image" />
                         <article class="products__card">
                             <p class="products__name">
-                                {{item.name}} {{item.cost}} рублей
+                                {{item.name}} {{item.cost}} руб.
                                 <img src="../../public/img/plus-flat.png"  style="width: 30px; height: 30px; align: center; top: 7px; right: 1px; position: relative;"
                                 @click.prevent="addItemToCart(item)"
                                 />
@@ -115,7 +115,7 @@
                     <div class="contacts__info-right-bottom">
                         <form class="contacts__form">
                             <input class="contacts__input" type="email" placeholder="Введите свою электронную почту" required>
-                            <button class="contacts__btn" type="submit">
+                            <button class="contacts__btn" type="submit" click.>
                                 ОТПРАВИТЬ
                             </button>
                         </form>

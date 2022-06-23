@@ -5,7 +5,7 @@
                 <h2 class="hero__title">
                     Встал ради чашки кофе, а&nbsp;потом не&nbsp;заметил, как день прошёл
                 </h2>
-                <button class="hero__btn">
+                <button class="hero__btn" @click.prevent="$router.push({name: 'Basket'})">
                     СДЕЛАТЬ ЗАКАЗ
                 </button>
             </div>
@@ -21,7 +21,7 @@
                         <img :src="'./img/'+item.filename" class="image" />
                         <article class="menu__card">
                             <p class="menu__name">
-                                {{item.name}}, {{item.cost}} рублей
+                                {{item.name}}, {{item.cost}} руб.
                                 <img src="../../public/img/plus-flat.png"  style="width: 30px; height: 30px; align: center; top: 7px; right: 1px; position: relative;"
                                 @click.prevent="addItemToCart(item)"
                                 />
@@ -44,7 +44,7 @@
                         <img :src="'./img/'+item.filename" class="image" />
                         <article class="menu__card">
                             <p class="menu__name">
-                                {{item.name}}, {{item.cost}} рублей
+                                {{item.name}}, {{item.cost}} руб.
                                 <img src="../../public/img/plus-flat.png"  style="width: 30px; height: 30px; align: center; top: 7px; right: 1px; position: relative;"
                                 @click.prevent="addItemToCart(item)"
                                 />
@@ -67,7 +67,7 @@
                         <img :src="'./img/'+item.filename" class="image">
                         <article class="menu__card">
                             <p class="menu__name">
-                                {{item.name}}, {{item.cost}} рублей
+                                {{item.name}}, {{item.cost}} руб.
                                 <img src="../../public/img/plus-flat.png"  style="width: 30px; height: 30px; align: center; top: 7px; right: 1px; position: relative;"
                                 @click.prevent="addItemToCart(item)"
                                 />
@@ -90,7 +90,7 @@
                         <img :src="'./img/'+item.filename" class="image">
                         <article class="menu__card">
                             <p class="menu__name">
-                                {{item.name}}, {{item.cost}} рублей
+                                {{item.name}}, {{item.cost}} руб.
                                 <img src="../../public/img/plus-flat.png"  style="width: 30px; height: 30px; align: center; top: 7px; right: 1px; position: relative;"
                                 @click.prevent="addItemToCart(item)"
                                 />
@@ -100,36 +100,6 @@
                             </p>
                         </article>
                     </li>
-                    <!-- <li class="menu__item">
-                        <article class="menu__card sweet-pie">
-                            <p class="menu__name">
-                                Сладкий пирог, 237 рублей
-                            </p>
-                            <p class="menu__descr">
-                                С клубникой, с лесными ягодами
-                            </p>
-                        </article>
-                    </li>
-                    <li class="menu__item">
-                        <article class="menu__card croissant">
-                            <p class="menu__name">
-                                Круассаны, 130 рублей
-                            </p>
-                            <p class="menu__descr">
-                                С кремом, с шоколадом
-                            </p>
-                        </article>
-                    </li>
-                    <li class="menu__item">
-                        <article class="menu__card sweet-cakes">
-                            <p class="menu__name">
-                                Сладкие пирожки, 68 рублей
-                            </p>
-                            <p class="menu__descr">
-                                С абрикосом, с персиком, с джемом
-                            </p>
-                        </article>
-                    </li> -->
                 </ul>
             </div>
         </section>
@@ -169,6 +139,12 @@ export default {
         filters: [{ name: "type_product", value: 'PASTERY' }]
         });
         this.pastery = result.data.products.rows;
+    },
+
+    methods: {
+        addItemToCart(product){
+            this.$root.showNotification({title: "Добавлено в корзину!", text: `Продукт: ${product.name}, цена: ${product.cost}`});
+        }
     }
 }
 </script>

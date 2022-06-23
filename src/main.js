@@ -6,6 +6,13 @@ import Notifications from "vue-notification";
 
 Vue.config.productionTip = false;
 
+import VueModalTor from "vue-modaltor/dist/vue-modaltor.common";
+import "vue-modaltor/dist/vue-modaltor.css";
+
+Vue.use(VueModalTor, {
+    bgPanel: "#7957d5"  // add custome options
+});
+
 Vue.use(Notifications);
 
 new Vue({

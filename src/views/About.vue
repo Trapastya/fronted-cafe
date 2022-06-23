@@ -5,7 +5,7 @@
             <h2 class="hero__title">
                 Ради кофе можно пойти на всё
             </h2>
-            <button class="hero__btn">
+            <button class="hero__btn" @click.prevent="$router.push({name: 'Basket'})">
                 СДЕЛАТЬ ЗАКАЗ
             </button>
         </div>

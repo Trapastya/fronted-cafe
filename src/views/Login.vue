@@ -29,8 +29,11 @@
 
 import axios from 'axios';
 import CONSTANTS from "./../CONSTANTS";
-
+import { mapState } from 'vuex'
 export default {
+    computed: mapState({
+        user: state => state.user,
+    }),
     data() {
         return {
             email: null,
@@ -42,9 +45,12 @@ export default {
             const result = await axios.post(CONSTANTS.VUE_APP_API_URL + '/users/login', {
                 email: this.email, password: this.password 
             });
-
-            if (result.data.success) {
+            if (!result.data.success) {
+                this.$root.showNotification({title: "Ошибка!", text: result.data.message, type:"error"});
+            } else if (result.data.success) {
                 localStorage.setItem("auth_token", result.data.token)
+                localStorage.setItem("username", result.data.username);
+                this.user.name = result.data.username;
                 this.$router.push({ name: 'Menu' });
             }
         }
